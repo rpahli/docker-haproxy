@@ -19,4 +19,6 @@ myip=$(hostname --ip-address)
 
 iptables -t mangle -I OUTPUT -p tcp -s $myip --syn -j MARK --set-mark 1
 
+service haproxy start
+
 /usr/bin/supervisord
